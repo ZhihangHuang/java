@@ -1,0 +1,33 @@
+package assign;
+import java.util.*;
+class Bankacount extends Thread{
+	int cash;
+	System.out.println("输入存的金额： ");
+	Scanner k = new Scanner(System.in);
+	cash = k.nextInt();
+	public void run() {
+		for (int i = 0; i<4; i++) {
+			DepositCash.Desposit(cash);
+		}
+	}	
+}
+class DepositCash {
+	private static int Balance = 1000;
+	public static synchronized void Desposit (int k) {
+		int temp = Balance;
+		temp = Balance - k;
+		try { 
+			Thread.sleep((int)(1000*Math.random()));
+		}catch(Exception e) {
+			System.out.println(e.toString());
+		}
+		Balance = temp;
+	}
+}
+
+
+public class Test{
+	public static void main(String[] args) {
+	
+	}
+}

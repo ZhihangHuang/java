@@ -1,0 +1,15 @@
+package work;
+import javax.swing.*;
+import java.awt.*;
+public class Assignment {
+	static JPanel  pan= new JPanel();
+	static JButton add,sub,Mul,Div;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		JFrame fra = new JFrame("简易计算器：".);
+		fra.getContentPane().setBackground(Color.cyan);
+		GridLayout grid = new GridLayout(1,4);
+	}
+
+}

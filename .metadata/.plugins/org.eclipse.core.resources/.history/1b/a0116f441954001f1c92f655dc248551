@@ -1,0 +1,71 @@
+package work;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class Assignment {
+    static JPanel pan = new JPanel();
+    static JPanel ButtonPanel = new JPanel();
+    static JButton add, sub, mul, div;
+
+    public static void main(String[] args) {
+        // 创建主框架
+        JFrame fra = new JFrame("简易计算器");
+        fra.setSize(600, 200);
+        fra.setLayout(new BorderLayout());
+
+        // 设置输入面板和背景颜色
+        pan.setBackground(Color.YELLOW);
+        FlowLayout flt = new FlowLayout(FlowLayout.CENTER, 10, 10);
+        pan.setLayout(flt);
+
+        // 创建输入字段和标签
+        JTextField Textnum1 = new JTextField("0.", 5);
+        JLabel num1 = new JLabel("Number 1", JLabel.CENTER);
+        JTextField Textnum2 = new JTextField("0.", 5);
+        JLabel num2 = new JLabel("Number 2", JLabel.CENTER);
+        JTextField Textresult = new JTextField("0.", 10);
+        JLabel result = new JLabel("Result", JLabel.CENTER);
+        Textresult.setEditable(false); // 设置结果字段不可编辑
+
+        // 将组件添加到输入面板
+        pan.add(num1);
+        pan.add(Textnum1);
+        pan.add(num2);
+        pan.add(Textnum2);
+        pan.add(result);
+        pan.add(Textresult);
+
+        // 添加输入面板到框架
+        fra.add(pan, BorderLayout.CENTER);
+
+        // 设置按钮
+        add = new JButton("Add");
+        sub = new JButton("Subtract");
+        mul = new JButton("Multiply");
+        div = new JButton("Divide");
+
+        // 将按钮添加到按钮面板
+        GridLayout grid = new GridLayout(1, 4, 10, 10);
+        ButtonPanel.setLayout(grid);
+        ButtonPanel.add(add);
+        ButtonPanel.add(sub);
+        ButtonPanel.add(mul);
+        ButtonPanel.add(div);
+
+        // 添加按钮面板到框架
+        fra.add(ButtonPanel, BorderLayout.SOUTH);
+
+        // 自定义标题栏
+        JPanel titlePanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        JLabel titleLabel = new JLabel(fra.getTitle(), JLabel.CENTER);
+        titleLabel.setFont(new Font("Arial", Font.BOLD, 16));
+        titlePanel.setBackground(Color.YELLOW); // 设置背景颜色
+        titlePanel.add(titleLabel);
+        fra.add(titlePanel, BorderLayout.NORTH);
+
+        // 设置默认关闭操作和可见性
+        fra.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        fra.setVisible(true);
+    }
+}

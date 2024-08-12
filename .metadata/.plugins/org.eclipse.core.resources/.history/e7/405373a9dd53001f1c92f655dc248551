@@ -1,0 +1,7 @@
+package sy13;
+
+public class Test {
+	public static void main(String[] agrs) {
+		JFrame jfrm = new JFrame();
+	}
+}

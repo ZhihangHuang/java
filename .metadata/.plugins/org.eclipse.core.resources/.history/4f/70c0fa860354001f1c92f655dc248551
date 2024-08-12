@@ -1,0 +1,12 @@
+package work;
+import javax.swing.*;
+import java.awt.*;
+public class Flow  {
+	JFrame jfr = new JFrame("FlowLayout: ");
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		FlowLayout fly = new FlowLayout(FlowLayout.CENTER, 5,10);
+		JButton jb = new JButton ("按钮");
+	}
+
+}

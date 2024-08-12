@@ -1,0 +1,26 @@
+package work;
+import javax.swing.*;
+import java.awt.*;
+public class Grid {
+	static JPanel jp = new JPanel();
+	static JTextField jtf = new JTextField("0.");
+	static JButton[] b =JButton[10];
+	static JButton bpoint,badd,bminus,btimes,bdivide,bequal;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		JFrame frm = new JFrame("GridLayout 网格布局器");
+		for(int i =0; i<10;i++) {
+			b[i]= new JButton(""+i);
+		}
+		bpoint = new JButton(".");
+		badd = new JButton("+");
+		bminus= new JButton("-");
+		btimes= new JButton("*");
+		bdivide =new JButton("/");
+		bequal = new JButton("=");
+		GridLayout grid =new GridLayout(4,4);
+		BorderLayout bdy = new BorderLayout(5,10);
+		
+	}
+
+}

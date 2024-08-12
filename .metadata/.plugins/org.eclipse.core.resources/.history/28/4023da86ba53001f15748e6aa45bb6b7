@@ -1,0 +1,13 @@
+package work;
+
+public class Test {
+
+	public static void main(String[] args) {
+		MyThread t = new MyThread();
+		Thread t1 = new Thread(t, "1号窗口");
+		Thread t2 = new Thread(t, "2号窗口");
+		Thread t3 = new Thread(t, "3号窗口");
+		System.out.println("主方法main()运行结束！");
+	}
+
+}

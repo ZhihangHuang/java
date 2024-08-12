@@ -1,0 +1,74 @@
+
+final int xxx = 11//常量不可以赋值
+//数据类型的转换
+int myInt005,myInt006=123;
+String myString005,myString006="213"
+myInt005 = Integer.valueOf(myString006);//Integer.valueOf 是把string006的值带入到int005里面
+
+myString005 = String.valueOf(myInt006);//把myint006的数值带入到string005里面 变成一个字符串
+### 开方
+
+int qq1,qq2 = 12;
+qq1= (int)Math.pow(qq2,2); //（谁的数值，几次方）
+###   如果开方的是整数写int 反之写double 
+qq1 = qq2++;//先取数再自增
+qq1 = ++ qq2 ; 先自增再加一
+
+##数学函数
+double mydouble;
+mydouble=Math.E;//取函数里的常数e
+mydouble =Math.PI;//取PI
+mydouble = Math.sin(30*Math.PI/180);//取30度角的sin值
+mydouble = Math.abs(-13);//13的绝对值
+mydouble =  Math.max(1,2);//取1，2中的最大数
+mydouble = Math.random();//去一个随机数
+mydouble = Math.random()*(100-10+1)+10;//上限加一下限加10  取1-100的随机数
+
+### 1.2.3 一维数组
+数据类型  数组名称[] = new 数据类型 【数组长度】
+//eg
+String Student[]  = new String[15];//0-14
+student[0] =" 李1";
+....
+studnet[14]= "liu3";
+### 1.2.4二维数组
+数据类型 数据名称[][] =new s数据类型[行宽][列宽];
+String Studnet[][]=new String[3][2];
+Student[0][0] = "A1";
+Student[0][1] = "A2";
+Student[1][0] = "b1";
+Student[1][1] = "b2";
+Student[2][0] = "c1";
+Student[2][1] = "c2";
+for (int i = 0; i<3; i++){
+    for (int j =0 ; j<2 : j++) {
+        System.out.println(i+","+j+":"Student[i][j]);
+    }
+}
+###1.2.5 异常处理 try catch
+语法：
+try {
+    主体程序;
+    //发生异常，程序终止，跳转到catch
+}catch(Exception e){
+    异常处理程序
+}finally{
+    无论是否发生异常都执行程序；
+}
+eg:
+public class MyTryCatch{
+    public static void main(String args[]){
+        try {
+            System.out.println(1/0);
+            System.out.println("no exception");
+        }catch (Exception e){
+            System.out.println("exception happen");
+            e.printStackTrace();
+        }finally{
+            System.out.println("finally print");
+        }
+    }
+}
+###1.3.1 顺序的程序（顺序，分支，循环）
+if 
+循环

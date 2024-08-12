@@ -1,0 +1,15 @@
+package work;
+
+public class Test {
+
+	public static void main(String[] args) {
+		MyThread w1 = new MyThread("窗口1");
+		MyThread w2 = new MyThread("窗口2");
+		MyThread w3 = new MyThread("窗口3");
+		w1.start();
+		w2.start();
+		w3.start();
+		System.out.println("主方法main()运行结束！");
+	}1
+
+}

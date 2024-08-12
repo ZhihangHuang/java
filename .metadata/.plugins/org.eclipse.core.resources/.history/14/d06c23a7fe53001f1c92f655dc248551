@@ -1,0 +1,17 @@
+package work;
+import javax.swing.*;
+public class Wenben extends JFrame{
+	JTextField jtf = new JTextField ("该文本不可编辑",30);//因为这个是不可编辑的不动的所以不用static
+	static JPasswordField jpf = new JPasswordField("我爱你",30);
+	public Wenben(String str) {
+		super(str);
+		jtf.setBounds(20,40,140,20);
+		jtf.setEditable(false);
+		this.add(jtf);
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Wenben frm = new Wenben("文本编辑");
+	}
+
+}

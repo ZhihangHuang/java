@@ -1,0 +1,33 @@
+package sy13;
+import javax.swing.*;
+import java.awt.*;
+public class Test3 extends JFrame  {
+
+	public static void main(String[] args) {
+		Test3 jfrm = new Test3();
+		jfrm.setTitle("Test1");
+		jfrm.setLayout(null);
+		jfrm.getContentPane().setBackground(Color.pink);
+		jfrm.setSize(300, 200);
+		Image im = (new ImageIcon("images.jpg")).getImage();
+		jfrm.setIconImage(im);
+		
+		JPanel jp = new JPanel();
+		jp.setLayout(null);
+		jp.setSize(200, 150);
+		jp.setLocation(0,10 );
+		Font fon = new Font("黑体",Font.BOLD+Font.ITALIC,20);
+		jp.setFont(fon);
+		
+		ImageIcon ic = new ImageIcon("小灯笼.jpg");
+		JButton btn = new JButton("灯笼",ic);
+		btn.setBounds(50, 30,100,40);
+		btn.setToolTipText("我是按钮");
+		
+		jp.add(btn);
+		jfrm.add(jp);
+		jfrm.setDefaultCloseOperation(DO_NOTHING_ON_CLOSE);
+		jfrm.setVisible(true);
+	}
+
+}

@@ -1,0 +1,72 @@
+package work;
+
+class Producer extends Thread {
+	Ticket t = null;
+	public Producer (Ticket t) {
+		this.t = t;
+	}
+	public void run() {
+		while (t.number< t.size) {
+			t.put();
+		}
+	}
+	
+}
+class Consumer extends Thread {
+	Ticket t = null;
+	public Consumer (Ticket t) {
+		this.t = t;
+	}
+	public void run() {
+		while (t.number<= t.size) {
+			t.sell();
+		}
+	}
+}
+class Ticket{
+	protected int size;//总票数
+	int number = 0;//当前票数
+	boolean avaliable  = false;//当前石否有票
+	public Ticket(int s) {
+		size = s;
+	}
+	public  synchronized void put() {
+		if (avaliable) {
+			try {wait();
+			}catch (Exception e){
+				System.out.println(e.toString());
+			}
+		}
+		System.out.println("导入【"+(++number)+"】票号");
+		avaliable = true;
+		notify();
+	}
+	public  synchronized void sell() {
+		if (!avaliable) {
+			try {wait();
+			}catch(Exception e) {
+				System.out.println(e.toString());
+			}
+		}
+		System.out.println("卖出【"+number+"】票号");
+		avaliable = false;
+		notify();
+		if (number == size) {
+			number = size+1;
+		}
+	}
+	
+}
+
+public class Test3 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Ticket t = new Ticket(10);
+		Producer p = new Producer(t);
+		Consumer c = new Consumer(t);
+		p.start();
+		c.start();
+	}
+
+}

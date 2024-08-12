@@ -1,0 +1,19 @@
+package work;
+
+public class MyThread extends Thread implements Runnable {
+	private int ticket = 10;
+	private String window;
+	public MyThread (String str){
+		window = str;
+	}
+	public void run() {
+		while (true) {
+			if (ticket >0) {
+				ticket--;
+				System.out.println(window+ticket+"号");
+			}else{
+				System.exit(0);
+			}
+		}
+	}
+}

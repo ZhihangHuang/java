@@ -1,0 +1,14 @@
+构造方法: 
+public Thread() 创建一个线程对象，线程对象的名称是“Thread” + n 的形式，其中n是个整数。
+public Thread(String name) 参数name 制定了线程的名称
+public Thread(Runnable target) 创建一个线程对象，线程对象的名称是“Thread” + n 的形式，其中n是个整数。 参数target 的run（）方法将被线程对象调用，来执行代码。
+public Thread（Runable target,String name）参数name 指定名称
+调用方法的时候如果是静态，类名，如果是final不可覆盖，如果是实例则创建对象调用。有返回值要注意返回值对象
+Thread 类的常见方法：
+public static Thread currentThread(): 返回当前执行的线程。 静态方法
+public final String getName(): 返回线程的名称 是一个最终方法
+public static void sleep(long mills): 当前执行线程指定睡眠时间（毫秒）
+public final void setPriority():设置优先级
+public void start ();
+public void run();
+....

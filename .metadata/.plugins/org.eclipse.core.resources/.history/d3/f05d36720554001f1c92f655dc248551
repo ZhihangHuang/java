@@ -1,0 +1,23 @@
+package work;
+import javax.swing.*;
+import java.awt.*;
+public class Border {
+	static JFrame  frm = new JFrame ("BorderLayout布局管理器");
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		BorderLayout bdy = new BorderLayout(5,10);
+		frm.setLayout(bdy);
+		
+		frm.setSize(330,200);
+		frm.add(new JLabel("North"),BorderLayout.NORTH);
+		frm.add(new JLabel("South"),BorderLayout.SOUTH);
+		frm.add(new JLabel("East"),BorderLayout.EAST);
+		frm.add(new JLabel("West"),BorderLayout.WEST);
+		frm.add(new JLabel("Middle"),BorderLayout.CENTER);
+		
+		frm.setVisible(true);
+		frm.setResizable(false);
+		frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+}

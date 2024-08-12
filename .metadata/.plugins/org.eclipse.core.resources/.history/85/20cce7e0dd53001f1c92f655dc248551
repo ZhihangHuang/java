@@ -1,0 +1,10 @@
+package sy13;
+import javax.swing.*;
+public class Test {
+	public static void main(String[] agrs) {
+		JFrame jfrm = new JFrame();
+		jfrm.setTitle("TestFrame");
+		jfrm.setSize(250,140);
+		jfrm.setLocation(260,150);
+	}
+}

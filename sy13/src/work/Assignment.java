@@ -1,0 +1,53 @@
+package work;
+import javax.swing.*;
+import java.awt.*;
+public class Assignment {
+	static JPanel  pan= new JPanel();
+	static JPanel ButtonPanel = new JPanel();
+	static JButton add,sub,mul,div;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		JFrame fra = new JFrame("简易计算器");
+		fra.setSize(600,100);
+		FlowLayout flt = new FlowLayout (FlowLayout.CENTER, 10, 10);
+		GridLayout grid = new GridLayout(1, 4);
+		pan.setBackground(Color.YELLOW);
+		
+		
+		JTextField  Textnum1 = new  JTextField("0.",5);
+		JLabel num1 = new JLabel("Number 1",JLabel.CENTER);
+		JTextField  Textnum2 = new  JTextField("0.",5);
+		JLabel num2 = new JLabel("Number 2",JLabel.CENTER);
+		JTextField  Textresult = new  JTextField("0.",10);
+		JLabel result= new JLabel("result",JLabel.CENTER);
+		pan.add(num1);
+		pan.add(Textnum1);
+		pan.add(num2);
+		pan.add(result);
+		pan.add(Textnum2);
+		pan.add(result);
+		pan.add(Textresult);
+		pan.setLayout(flt);
+		fra.add(pan,BorderLayout.NORTH);
+		
+		add =new JButton("Add");
+		sub =new JButton("Substract");
+		mul = new JButton("Multiply");
+		div =new JButton("Divide");
+		ButtonPanel.add(add);
+		ButtonPanel.add(sub);
+		ButtonPanel.add(mul);
+		ButtonPanel.add(div);
+		ButtonPanel.setLayout(grid);
+		fra.add(ButtonPanel,BorderLayout.SOUTH);
+		Image im = (new ImageIcon("images.jpg")).getImage();
+		fra.setIconImage(im);
+		
+
+		
+		fra.setVisible(true);
+		fra.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+}

@@ -1,0 +1,13 @@
+package sy12;
+
+public class Test {
+
+	public static void main(String[] args) {
+		MyThread me = new MyThread("我");
+		MyThread you = new MyThread("你");
+		you.start();
+		me.start();
+		System.out.println("mian运行完成");
+	}
+
+}

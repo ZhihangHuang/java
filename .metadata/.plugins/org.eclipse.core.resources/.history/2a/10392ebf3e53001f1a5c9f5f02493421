@@ -1,0 +1,18 @@
+package t1;
+import java.io.*;
+public class Picture {
+
+	public static void main(String[] args) throws IOException{
+		// TODO Auto-generated method stub
+		FileInputStream hei = new FileInputStream("d://黑色");
+		FileOutputStream bai = new FileOutputStream("c://白色");
+		System.out.println("文件的大小=" +hei.available());
+		byte[] b = new byte[hei.available()];
+		int i = hei.read(b);
+		bai.write(b);
+		System.out.println("文件已被拷贝并且更名:");
+		hei.close();
+		bai.close();
+	}
+
+}

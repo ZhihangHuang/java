@@ -1,0 +1,7 @@
+JFrame 类的对象显示效果是一个‘窗口’
+JFrame 构造方法：
+	JFrame()
+	JFrame(String title)
+	eg:
+	JFrame jfrm = new JFrame("空的框架");
+	JFrame jfrm = nbewJFrame();

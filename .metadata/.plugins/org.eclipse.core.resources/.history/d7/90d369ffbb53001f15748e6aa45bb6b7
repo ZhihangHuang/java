@@ -1,0 +1,41 @@
+构造方法: 
+public Thread() 创建一个线程对象，线程对象的名称是“Thread” + n 的形式，其中n是个整数。
+public Thread(String name) 参数name 制定了线程的名称
+public Thread(Runnable target) 创建一个线程对象，线程对象的名称是“Thread” + n 的形式，其中n是个整数。 参数target 的run（）方法将被线程对象调用，来执行代码。
+public Thread（Runable target,String name）参数name 指定名称
+调用方法的时候如果是静态，类名，如果是final不可覆盖，如果是实例则创建对象调用。有返回值要注意返回值对象
+Thread 类的常见方法：
+public static Thread currentThread(): 返回当前执行的线程。 静态方法
+public final String getName(): 返回线程的名称 是一个最终方法
+public static void sleep(long mills): 当前执行线程指定睡眠时间（毫秒）
+public final void setPriority():设置优先级
+public void start ();
+public void run();
+....
+步骤：
+1.定义Thread的子类并重写父类的run方法：
+2.run()方法就是线程的执行体，他的方法代表了线程需要完成的任务
+3. 创建子类的实例 即创建线程的对象
+4。用start()方法启动线程
+class 类名 extends Thread {
+	成员变量；
+	成员方法；
+	修饰符 run()//覆盖父类的run()方法{
+		线程的代码
+	}
+}
+
+Runnable接口：
+如果有父类不能继承Thread 
+该接口只包含一个抽象方法run()方法；
+重写run()方法
+创建Runnable实现MyThread 的实例，以此实例为Thread 的target来创建Thread的对象
+public Thread (Runnable target)
+public Thread(Runnable target,String name)
+所创建的Thread 对象才是真正的线程对象
+语法：
+class MyThread implements Runnable{
+	...
+	public void run()//线程执行体
+	{}
+}

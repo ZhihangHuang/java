@@ -1,0 +1,33 @@
+package assign;
+import java.util.*;
+class Bankacount extends Thread{
+	public void run() {
+		for (int i = 0; i<4; i++) {
+			DepositCash.Desposit(100);
+		}
+	}	
+}
+class DepositCash {
+	private static int Balance = 1000;
+	public static synchronized void Desposit (int k) {
+		int temp = Balance;
+		temp = Balance - k;
+		try { 
+			Thread.sleep((int)(1000*Math.random()));
+		}catch(Exception e) {
+			System.out.println(e.toString());
+		}
+		Balance = temp;
+		System.out.println("余额是： "+Balance);
+	}
+}
+
+
+public class Test{
+	public static void main(String[] args){		
+		Bankacount b1 =new Bankacount();
+		Bankacount b2 =new Bankacount();
+		b1.start();
+		b2.start();
+	}
+}

@@ -1,0 +1,47 @@
+package work;
+import javax.swing.*;
+import java.awt.*;
+public class Grid {
+	static JPanel jp = new JPanel();
+	static JTextField jtf = new JTextField("0.");
+	static JButton[] b =new JButton[10];
+	static JButton bpoint,badd,bminus,btimes,bdivide,bequal;
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		JFrame frm = new JFrame("GridLayout 网格布局器");
+		frm.setSize(300,200);
+		frm.setResizable(false);
+		
+		for(int i =0; i<10;i++) {
+			b[i]= new JButton(""+i);
+		}
+		bpoint = new JButton(".");
+		badd = new JButton("+");
+		bminus= new JButton("-");
+		btimes= new JButton("*");
+		bdivide =new JButton("/");
+		bequal = new JButton("=");
+		
+		jtf.setBackground(Color.cyan);
+		GridLayout grid =new GridLayout(4,4);
+		jp.setLayout(grid);
+		BorderLayout bdy = new BorderLayout(5,10);
+		frm.setLayout(bdy);
+		frm.add(jtf,BorderLayout.NORTH);
+		frm.add(jp,BorderLayout.SOUTH);
+		jtf.setHorizontalAlignment(JTextField.RIGHT);
+		
+		jp.add(b[7]);	jp.add(b[8]);   	jp.add(b[9]);		jp.add(bdivide);
+		
+		jp.add(b[4]);	jp.add(b[5]);		jp.add(b[6]);		jp.add(btimes);
+		
+		jp.add(b[1]);   jp.add(b[2]);       jp.add(b[3]); 		jp.add(bminus);
+		
+		jp.add(b[0]);	jp.add(bpoint);		jp.add(bequal);		jp.add(badd);
+		
+		frm.setVisible(true);
+		frm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+	}
+
+}
